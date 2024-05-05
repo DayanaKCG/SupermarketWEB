@@ -9,6 +9,7 @@ namespace SupermarketWEB.Pages.Categories
     public class EditModel : PageModel
     {
         private readonly SupermarketContext _context;
+        
         public EditModel(SupermarketContext context)
         {
             _context = context;
