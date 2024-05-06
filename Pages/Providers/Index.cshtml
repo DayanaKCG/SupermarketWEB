@@ -1,0 +1,36 @@
+﻿@page
+@model SupermarketWEB.Pages.Providers.IndexModel
+@{
+	ViewData["Title"] = "Providers";
+}
+
+<h1>Providers</h1>
+<p>
+	<a asp-page="Create" class="btn btn-success">Providers New</a>
+	</p>
+	<table class ="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Providers[0].Name)
+			</th>
+			<th>Actions</th>
+			</tr>
+			</thead>
+			<tbody>
+			@foreach (var item in Model.Providers)
+			{
+		<tr>
+		<td>
+			@Html.DisplayFor(modelItem => item.Name)
+		</td>
+		<td>
+					<a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+					<a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+					</td>
+					</tr>
+			}
+
+	</tbody>
+
+</table>
