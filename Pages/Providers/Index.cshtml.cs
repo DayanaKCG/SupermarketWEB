@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -6,7 +7,8 @@ using SupermarketWEB.Models;
 
 namespace SupermarketWEB.Pages.Providers
 {
-    public class IndexModel : PageModel
+	[Authorize]
+	public class IndexModel : PageModel
     {
 		private readonly SupermarketContext _context;
 		public IndexModel(SupermarketContext context)
@@ -19,7 +21,7 @@ namespace SupermarketWEB.Pages.Providers
 		{
 			if (_context.Providers != null)
 			{
-				
+				Providers = await _context.Providers.ToListAsync();
 			}
 		}
 
