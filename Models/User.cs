@@ -12,5 +12,6 @@ namespace SupermarketWEB.Models
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-    }
+
+	}
 }
