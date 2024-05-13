@@ -3,7 +3,6 @@
 @{
 	ViewData["Title"] = "Providers";
 }
-
 <h1>Providers</h1>
 <p>
 	<a asp-page="Create" class="btn btn-success">Create New</a>
@@ -11,6 +10,9 @@
 <table class="table">
 	<thead>
 		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Providers[0].IdDocument)
+			</th>
 			<th>
 				@Html.DisplayNameFor(model => model.Providers[0].Name)
 			</th>
